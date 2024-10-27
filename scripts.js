@@ -6,18 +6,19 @@ form.addEventListener("submit", (event) => {
   const entries = new FormData(event.target);
 
   let{dividend, divider} = Object.fromEntries(entries);
-  dividend = parseFloat(dividend);
-  divider = parseFloat(divider);
+ 
 
   //check is unputs are provided
-  if  (isNaN(dividend) || isNaN(divider)) {
     if(dividend === ""  || divider === "") {
       result.innerText = "Both values are required to perfome  the division.";
       return
     } else {
       result.innerText = "Math Error";
-    }
   }
+
+  // parse inputs to numbers
+  dividend = parseFloat(dividend);
+  divider = parseFloat(divider);
 
   // check if divider is zero
   if (divider === 0) {
