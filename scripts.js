@@ -25,7 +25,11 @@ form.addEventListener("submit", (event) => {
     return
   }
 
-
-
-  result.innerText = dividend / divider;
+//  perform division
+const divisionResult = dividend / divider;
+if (Number.isInteger(divisionResult)) {
+  result.innerText = divisionResult.toString();
+}  else {
+  result.innerText = Math.floor(divisionResult).toString();
+}
 });
