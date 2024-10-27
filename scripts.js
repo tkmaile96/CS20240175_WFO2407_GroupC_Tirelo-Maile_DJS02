@@ -19,6 +19,13 @@ form.addEventListener("submit", (event) => {
     }
   }
 
+  // check if divider is zero
+  if (divider === 0) {
+    result.innerText = "Math Error";
+    return
+  }
+
+
 
   result.innerText = dividend / divider;
 });
