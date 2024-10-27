@@ -5,5 +5,9 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
+
+  let{dividend, divider} = object.fromEntries(entries);
+  dividend = parseFloat(dividend);
+  divider = parseFloat(divider);
   result.innerText = dividend / divider;
 });
